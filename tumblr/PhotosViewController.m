@@ -22,6 +22,7 @@
     
     self.PhotosTableView.dataSource = self;
     self.PhotosTableView.delegate = self;
+    self.PhotosTableView.rowHeight = 240;
     
     NSURL *url = [NSURL URLWithString:@"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -71,7 +72,7 @@
         //5. Download the image
         [cell.PhotoView setImageWithURL:url];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"This is row %ld", (long)indexPath.row];
+    
     
     return cell;
 }
